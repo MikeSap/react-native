@@ -3,17 +3,42 @@ import { Text, StyleSheet, View, Button } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import ComponentsScreen from "./ComponentsScreen";
 
-const HomeScreen = (props) => {
+const HomeScreen = ({ navigation }) => {
+  const { navigate } = navigation;
   return (
     <View>
       <Text style={styles.text}>Welcome to the demo app</Text>
+
       <Button
         title="Go to Components Demo"
-        onPress={() => props.navigation.navigate("Components")}
+        onPress={() => navigate("Components")}
       />
-      <TouchableOpacity onPress={() => props.navigation.navigate("List")}>
-        <Text>Go to list demo</Text>
-      </TouchableOpacity>
+
+      <Button title="Go to List Demo" onPress={() => navigate("List")} />
+
+      <Button
+        title="Go to Image Screen Demo"
+        onPress={() => navigate("Image")}
+      />
+
+      <Button
+        title="Go to Counter Screen Demo"
+        onPress={() => navigate("Counter")}
+      />
+
+      <Button
+        title="Go to Color Screen Demo"
+        onPress={() => navigate("Color")}
+      />
+
+      <Button
+        title="Go to Square Screen Demo"
+        onPress={() => navigate("Square")}
+      />
+
+      {/* <TouchableOpacity onPress={() => navigation.navigate("List")}> */}
+      {/* <Text>Go to list demo</Text> */}
+      {/* </TouchableOpacity> */}
     </View>
   );
 };
